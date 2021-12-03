@@ -1,10 +1,17 @@
 import React from 'react'
+import Card from './CityItems'
 
 const Cities = ({param}) => {
     return (
-        <section className = 'card'>
+        <section style={
+            {
+                display: 'grid',
+                gridTemplateColumns: 'repeat(3, 1fr)',
+                gap: '1rem'
+            }
+        }>
             {param.map(item => (
-            <h1 key={item.id}>{item.city}</h1>
+            <Card key={item.id} param={item}></Card>
             ))}
 
         </section>
